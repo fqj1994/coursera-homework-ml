@@ -14,6 +14,8 @@ J = 0;
 %               You should set J to the cost.
 
 
+K = X * theta - y;
+J = K' * K / 2 / m;
 
 
 

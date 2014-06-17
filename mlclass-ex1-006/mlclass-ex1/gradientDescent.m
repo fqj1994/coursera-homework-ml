@@ -18,7 +18,9 @@ for iter = 1:num_iters
     %
 
 
-
+    hpo = X * theta;
+    K = ones(1, length(y)) * ((hpo - y) .* X);
+    theta = theta - alpha * 1/m * K';
 
 
 
