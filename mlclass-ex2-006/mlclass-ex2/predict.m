@@ -16,8 +16,8 @@ p = zeros(m, 1);
 %
 
 
-
-
+hyp = sigmoid(theta' * X')';
+p = (hyp >= 0.5);
 
 
 
