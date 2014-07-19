@@ -32,7 +32,9 @@ X = [ones(m, 1) X];
 
 
 
-
+hyp = sigmoid(all_theta * X');
+[_W, _P] = max(hyp);
+p = _P';
 
 
 
