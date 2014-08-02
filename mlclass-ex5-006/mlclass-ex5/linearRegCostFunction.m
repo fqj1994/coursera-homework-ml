@@ -21,7 +21,11 @@ grad = zeros(size(theta));
 
 
 
-
+Y = X * theta;
+detY = Y - y;
+theta(1) = 0;
+J = 1 / (2 * m) * (detY' * detY) + lambda / (2 * m) * (theta' * theta);
+grad = (1 / m * detY' * X)' + lambda / m * theta;
 
 
 
