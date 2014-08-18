@@ -28,7 +28,18 @@ centroids = zeros(K, n);
 
 
 
-
+for i = 1:K
+    cent = zeros(1, n);
+    cnt = 0;
+    for j = 1:m
+        if idx(j) == i
+            cnt = cnt + 1;
+            cent = cent + X(j, :);
+        end
+    end
+    cent = cent ./ cnt;
+    centroids(i, :) = cent;
+end
 
 
 

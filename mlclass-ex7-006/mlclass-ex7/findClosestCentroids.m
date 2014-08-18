@@ -21,9 +21,20 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
+m = size(X, 1);
+K = size(centroids, 1);
+for i = 1:m
+    iidx = 0;
+    dist = -1;
+    for j = 1:K
+        vec = X(i, :) - centroids(j, :);
+        if iidx == 0 || (vec * vec' < dist)
+            iidx = j;
+            dist = vec * vec';
+        end
+    end
+    idx(i) = iidx;
+end
 
 
 
