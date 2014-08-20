@@ -26,7 +26,10 @@ for epsilon = min(pval):stepsize:max(pval)
 
 
 
-
+    predictions = (pval < epsilon);
+    precision = sum(yval .* predictions) / sum(predictions);
+    recall = sum(yval .* predictions) / sum(yval);
+    F1 = 2 * (precision * recall) / (precision + recall);
 
 
 
